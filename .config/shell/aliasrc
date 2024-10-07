@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	ls="eza" 
+
+# Colorize commands when possible.
+alias \
+    grep="rg" \
+    cd="z" \
+    androidon="aft-mtp-mount /home/aboud/personal/mnt/.android/ && notify-send '' || notify-send 'there was a problem' " \
+    androidoff="umount /home/aboud/personal/mnt/.android/" \
+    vpnon="sudo protonvpn -f c && notify-send 'vpn is connected' || notify-send 'there was a problem' " \
+    vpnoff="sudo protonvpn d && notify-send 'vpn is diconnected' || notify-send 'there was a problem' " \
+    refresh="rm /home/aboud/dotfiles/dwl/config.h && cd /home/aboud/dotfiles/dwl/ && sudo make clean install " \
+    :q="exit"
+# These common commands are just too long! Abbreviate them.
+alias \
+	ka="killall" \
+	suck="rm config.h && sudo make clean install " \
+	g="git" \
+	p="pacman" \
+

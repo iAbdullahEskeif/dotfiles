@@ -1,0 +1,3 @@
+#!/bin/bash
+name_date=$(date +%Y%m%d%H%M%S)
+wf-recorder -f $HOME/personal/videos/$name_date.mkv && notify-send 'the screen is being recorded' || notify-send 'there is a problem recording your screen'

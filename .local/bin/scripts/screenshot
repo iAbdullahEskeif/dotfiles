@@ -1,0 +1,3 @@
+#!/bin/sh
+
+grim -g "$(slurp)" /home/aboud/personal/pictures/$(date +'%s.png') 
